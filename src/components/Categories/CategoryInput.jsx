@@ -7,8 +7,9 @@ const CategoryInput = ({categories = [], setCategories}) => {
         setInputValue(target.value)
     }
 
-    const handleCategoryButton = () => {
+    const handleAddCategoryButton = () => {
         setCategories([inputValue, ...categories])
+        setInputValue("")
     }
 
     return (
@@ -19,7 +20,7 @@ const CategoryInput = ({categories = [], setCategories}) => {
                 type="text"
             />
             <button
-                onClick={(e)=> handleCategoryButton(e)}
+                onClick={(e)=> handleAddCategoryButton(e)}
                 className="btn btn-primary btn-sm ms-2 mb-1"
                 type="button"
             >
