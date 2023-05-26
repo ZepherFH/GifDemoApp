@@ -12,19 +12,31 @@ const CategoryInput = ({categories = [], setCategories}) => {
         setInputValue("")
     }
 
+    const handleClearList = () => {
+        setCategories([])
+    }
+
     return (
         <div>
             <input
                 onChange={(e)=> handleInputChange(e)}
                 placeholder="Write Category name"
                 type="text"
+                value={inputValue}
             />
             <button
                 onClick={(e)=> handleAddCategoryButton(e)}
-                className="btn btn-primary btn-sm ms-2 mb-1"
+                className="btn btn-outline-success btn-sm ms-3 mb-2"
                 type="button"
             >
                 Add
+            </button>
+            <button
+                onClick={(e)=> handleClearList(e)}
+                className="btn btn-outline-danger btn-sm ms-3 mb-2"
+                type="button"
+            >
+                Clean
             </button>
         </div>
     )
